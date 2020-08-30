@@ -1,0 +1,26 @@
+{% extends "global.html" %}
+
+  {% block title %}
+  <h3> detail of a student </h3>
+  {% endblock %}
+
+  {% block content %}
+    {% for student in liste %}
+      <div class="container">
+      <h2>{{student.firstName}} {{student.lastName}}</h2>
+      <ul>
+        <li> {{student.dateOfBirth}} </li>
+        <li> {{student.phoneNumber}} </li>
+        <li> {{student.email}} </li>
+        <li> {{student.cursus}} </li>
+        <li> <a href="/absence/{{student.cursus.id}}/{{student.id}}">{{absence}} absences </a></li>
+      </ul>
+      </div>
+      <div class="container">
+      <input 
+            type="button" 
+            value="Edit student" 
+            onclick="location.href='{% url 'editStudent' student_id=student.id %}';"/>
+      </div>
+    {% endfor %}  
+  {% endblock %}

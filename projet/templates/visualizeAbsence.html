@@ -1,0 +1,25 @@
+{% extends "global.html" %}
+
+  {% block title %}
+  <h3> Absences for {{student.firstName}} {{student.lastName}} </h3>
+  {% endblock %}
+
+  {% block content %}
+    <ul>
+    {% for presence in liste %}
+      <div class="container">
+        <li>
+          <label>{{presence.date}} {{presence.startTime}} - {{presence.stopTime}} -- {{presence.reason}}</label>
+        </li>
+      </div>
+    {% endfor %}
+    </ul>
+    <div>
+      <p>Total des absences : {{lenght}}
+    </div>
+      <input 
+        type="button" 
+        value="visualisate absence" 
+        onclick="location.href='{% url 'absence'  cursus_id=cursus.id %}';"/>
+
+  {% endblock %}

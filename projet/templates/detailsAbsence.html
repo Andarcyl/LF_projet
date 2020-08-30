@@ -1,0 +1,17 @@
+{% extends "global.html" %}
+
+  {% block title %}
+  <h3> List of student {{cursus.name}}</h3>
+  {% endblock %}
+
+  {% block content %}
+    <ul>
+    {% for student in liste %}
+      <div>
+        <li>
+          <a href="/absence/{{cursus.id}}/{{student.id}}">{{student.firstName}} {{student.lastName}}</a>
+        </li>
+      </div>
+    {% endfor %}
+    </ul>
+  {% endblock %}

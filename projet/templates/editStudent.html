@@ -1,0 +1,14 @@
+{% extends "global.html" %}
+
+  {% block title %}
+  <h3> Edit student </h3>
+  {% endblock %}
+
+  {% block content %}
+    <form method="post">
+      {{form.as_p}}
+      <div class="button">
+        <button type="submit">submit</button>
+      </div>
+    </form>
+  {% endblock %}
