@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+  {% block title %}
+  <h3>Absences for {{student.first_name}} {{student.last_name}} </h3>
+  {% endblock %}
+
+  {% block content %}
+    <ul>
+    {% for presence in liste %}
+      <div class="container">
+        <li>
+          <label>{{presence.date}} -- {{presence.reason}}</label>
+        </li>
+      </div>
+    {% endfor %}
+    </ul>
+    <div>
+      <p>Total des absences : {{lenght}}
+    </div>
+
+  {% endblock %}

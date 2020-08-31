@@ -1,3 +1,4 @@
+
 from django.forms.models import ModelForm
 from .models import Student, Presence
 
@@ -5,11 +6,11 @@ class FormulaireEtudiant(ModelForm):
   class Meta:
     model = Student
     fields = [
-      "firstName",
-      "lastName",
-      "dateOfBirth",
+      "first_name",
+      "last_name",
+      "birth_date",
       "email",
-      "phoneNumber",
+      "phone",
       "comments",
       "cursus",
     ]
@@ -18,10 +19,8 @@ class FormulairePresence(ModelForm):
   class Meta:
     model = Presence
     fields = [
-      "dateOfCall",
-      "isMissing",
       "reason",
+      "isMissing",
+      "date",
       "student",
-      "start_time",
-      "stop_time",
     ]

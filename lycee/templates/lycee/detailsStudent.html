@@ -1,16 +1,16 @@
-{% extends "global.html" %}
+{% extends "master.html" %}
 
   {% block title %}
-  <h3> detail of a student </h3>
+  <h3>Detail of a student </h3>
   {% endblock %}
 
   {% block content %}
     {% for student in liste %}
       <div class="container">
-      <h2>{{student.firstName}} {{student.lastName}}</h2>
+      <h2>{{student.first_name}} {{student.last_name}}</h2>
       <ul>
-        <li> {{student.dateOfBirth}} </li>
-        <li> {{student.phoneNumber}} </li>
+        <li> {{student.birth_date}} </li>
+        <li> {{student.phone}} </li>
         <li> {{student.email}} </li>
         <li> {{student.cursus}} </li>
         <li> <a href="/absence/{{student.cursus.id}}/{{student.id}}">{{absence}} absences </a></li>
@@ -20,7 +20,7 @@
       <input 
             type="button" 
             value="Edit student" 
-            onclick="location.href='{% url 'editStudent' student_id=student.id %}';"/>
+            onclick="location.href='{% url 'modifierEtudiant' student_id=student.id %}'"/>
       </div>
     {% endfor %}  
   {% endblock %}
